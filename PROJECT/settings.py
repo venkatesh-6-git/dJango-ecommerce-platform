@@ -86,13 +86,18 @@ WSGI_APPLICATION = 'PROJECT.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ecommerce_db',      # The name of the MySQL database you created
-        'USER': 'root',     # e.g., 'root'
-        'PASSWORD':'MyNewPassword!123', # Your MySQL password
-        'HOST': 'localhost',               # Use '127.0.0.1' or your remote server IP
-        'PORT': '3306',                    # Default MySQL port
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': os.environ.get('DB_PORT', '3306'),
+        'OPTIONS': {
+            'ssl': {'ca': '/etc/ssl/certs/ca-certificates.crt'},
+        },
     }
 }
+print('DB HOSE',os.environ.get('DB_HOST'))
+print('DB NAME',os.environ.get('DB_NAME'))
 
   
 # Password validation
@@ -129,10 +134,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.1/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT=BASE_DIR/'staticfiles'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
+STORAGES = {
+    'default': {
+        'BACKEND': 'django.core.files.storage.FileSystemStorage',
+    },
+    'staticfiles': {
+        'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',
+    },
+}
 
 
 

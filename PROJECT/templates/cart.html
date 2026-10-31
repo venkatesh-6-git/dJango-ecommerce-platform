@@ -1,0 +1,63 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<div class="cart-page">
+
+    <h2>My Cart</h2>
+
+    {% for i in data %}
+    <!-- <div class="final_container"> -->
+
+
+    <div class="cart-item">
+        {% if i.image %}
+        <img src="{{i.image.url}}" width="200px" height="230px" alt="{{i.name }}"> 
+        {% else %}
+        <p>no image</p>
+        {% endif %}
+        <!-- <div class="combine"> -->
+
+        <h3>Name: {{ i.name }}</h3>
+
+        <p>Price: ₹{{ i.price }}</p>
+        <p>Subtotal: ₹{{ i.subtotal }}</p>
+        <h4>Quantity: {{ i.quantity }}</h4>
+
+        <div class="cart-actions">
+            <a href="{% url 'increase_quantity' i.id %}">
+                <button type="button" class="cart-btn">+</button>
+            </a>
+
+            <a href="{% url 'decrease_quantity' i.id %}">
+                <button type="button" class="cart-btn">-</button>
+            </a>
+
+            <a href="{% url 'remove_cart' i.id %}">
+                <button type="button" class="remove-btn">Remove</button>
+            </a>
+        </div>
+        <!-- </div> -->
+        <!-- </div> -->
+
+    </div>
+    {% empty %}
+    <p class="empty-cart">Your cart is empty.</p>
+    {% endfor %}
+
+    <h3 class="cart-total">Total: ₹{{ total }}</h3>
+
+    <a href="{% url 'home' %}">
+        <button type="button" class="continue-btn">
+            Continue Shopping
+        </button>
+    </a>
+    <a href="{% url 'success' %}">
+        <button type="button" class="continue-btn">
+            Checkout
+        </button>
+    </a>
+
+</div>
+
+{% endblock %}

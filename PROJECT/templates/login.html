@@ -1,0 +1,31 @@
+{% extends 'home.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="l-container">
+
+    <h2 style="color: rgb(226, 43, 214);">Login Form</h2>
+    {% if messages %}
+    {% for msg in messages %}
+    <p style="color:red; text-align:center;">{{msg}}</p>
+    {% endfor %}
+    {% endif %}
+
+    <form class="l-form" method="POST">{% csrf_token %}
+        <label for="username" class="username">Username</label><br>
+        <input type="text" id="username" name="username" class='l-inpt' placeholder="Enter User Name" required>
+        <br><br>
+
+        <label for="password" class="password">Password</label><br>
+        <input type="password" id="password" name="password" class= 'l-inpt' placeholder="Enter Password" required>
+        <button type="button" id="toggle" style="background-color: rgb(184, 13, 241); color:black; border-radius: 10px;">Show</button>
+        <br><br>
+
+        <button class='l-button' type="submit">Login</button>
+    </form>
+    </div>
+    <script src="{% static 'script.js' %}"></script>
+
+{% endblock %}
+    

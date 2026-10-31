@@ -1,0 +1,38 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<h2>My Wishlist ❤️</h2>
+<div class="mobile-container">
+    {% for item in data %}
+    <div class="mobile-card">  
+
+        <div class="mobile-header">
+        {% if item.product_image %}
+            <img src="{{ item.product_image.url }}"
+                 height="150" width="150">
+        {% endif %}
+        </div>
+
+    <div class="mobile-body">
+        <h3>{{ item.product_name }}</h3>
+        <h4>₹{{ item.product_price }}</h4>
+    </div>
+
+    <div class="mobile-footer">
+        <div class="w-btn">
+        <a href="{% url 'remove_from_wishlist' item.wishlist_id %}">
+            <button type="button">Remove ❤️</button>
+        </a>
+        <a href="{% url 'home' %}"><button>continue shopping</button></a>
+        </div>
+    </div>
+
+</div>
+<div class="empty-wishlist">
+{% empty %}
+    <p>Your wishlist is empty.</p>
+{% endfor %}
+</div>
+
+</div>{% endblock %}

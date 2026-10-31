@@ -1,0 +1,328 @@
+
+<html>
+    <head>
+        {% load static %}
+        <title>HOME PAGE</title>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    </head>
+
+    <body>
+        <div class="top">
+            <h2>
+                <span style="color:#FF00E5;">Nexa</span>
+                <span style="color:#00F5FF">Mart</span>
+            </h2>
+            <!-- <div>
+            <input class='inp' type="text" placeholder='Search for products brands and more...'>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            </div> -->
+            <form method="GET" action="{% url 'search_product' %}">
+
+            <input class="inp" type="text"  name='q' placeholder="Search for products, brands and more...">
+            <button type="submit" style="height: 50px; border-radius: 10px; background-color: black;color:white; border:1px solid aqua;">Search</button>
+
+            </form>
+
+            <h3 class="user-thing">
+                <span style="color:#56e8ed"><i class="fa-solid fa-user"></i></span>
+                    <span style="color:white;" class="log"><a href="{% url 'login' %}" style="color:white; text-decoration: none;">Login /</a></span>
+                <span> 
+                    <a href="{% url 'register' %}" style="color:white; text-decoration: none;">Register/ </a></span>
+
+                <span><a href="{% url 'view_cart' %}" style="color:white; text-decoration: none;">MyCart/</a></span>
+                <span><a href="{% url 'view_wishlist' %}" style="color:white; text-decoration: none;">Wishlist</a></span>
+
+
+            </h3>
+            <!-- <h3>
+                MyCart/
+                WishList
+            </h3>
+             -->
+        </div>
+        <nav class="navigation">
+
+            <div>
+                <a href="{% url 'home' %}" style="color:white; text-decoration: none;">Home</a>
+            </div>
+
+            <div class="electronics">
+                <a href="#">Electronics</a>
+                <div class="esubmenu">
+                    <a href="{% url 'television' %}">Tvs</a>
+                    <a href="{% url 'mobiles' %}">Mobiles</a>
+                    <a href="{% url 'laptops' %}">Laptops</a>
+                </div>
+            </div>
+
+            <div class="clothes">
+                <a href="#">Clothes</a>
+                <div class="csubmenu">
+                    <a href="{% url 'shirt' %}">Shirts</a>
+                    <a href="{% url 'jeans' %}">Jeans</a>
+                </div>
+            </div>
+
+            <div class="beauty">
+                <a href="#">Beauty</a>
+                <div class="bsubmenu">
+                    <a href="{% url 'beauty' %}">Makeup-kits</a>
+                </div>
+            </div>
+
+            <div class="footware">
+                <a href="#">Footware</a>
+                <div class="fsubmenu">
+                    <a href="{% url 'casual_shoes' %}">Casual-shoes</a>
+                    <a href="{% url 'formal_shoes' %}">Formal-shoes</a>
+                </div>
+            </div>
+
+
+            <div class="furniture">
+                <a href="#">Furniture</a>
+                <div class="fursubmenu">
+                    <a href="{% url 'furniture' %}">Sofa-sets</a>
+                    <a href="{% url 'table' %}">Tables</a>
+                </div>
+            </div>
+
+
+            <div class="kitchen">
+                <a href="#">Home Appliances</a>
+                <div class="kitsubmenu">
+                    <a href="{% url 'kitchen' %}">Blenders</a>
+                    <a href="{% url 'rice_cookers' %}">Rice-cookers</a>
+                </div>
+            </div>
+        </nav>
+        {% block content %}
+        
+        <!-- <img class='banner' src="{% static 'Neon Tech World Sale Banner (1).png' %}"> -->
+        <div class="slider">
+        <img class="banner slide active" src="{% static 'cyber_shoes.png' %}">
+        <!-- <img class="banner slide" src="{% static 'cyber.clothes.jpg.jpeg' %}"> -->
+        <!-- <img class="banner" src="{% static 'cyber.electronics.jpg.jpeg' %}" class="slide"> -->
+        <!-- <img class="banner" src="{% static 'cyber_furnicher.jpg.jpeg' %}" class="slide"> -->
+        <!-- <img class="banner slide" src="{% static 'cyber.home.jpg.jpeg' %}"> -->
+
+        </div>
+
+        <div class="card-container">
+
+            <div class="card" style="background-color: aqua;;">
+                <a href="{% url 'mobiles' %}" style="text-decoration: none;">
+                <div class="card-head">
+                    <img src="{% static 'trimmed_mobile.jpg.jpeg' %}">
+                <!-- </div> -->
+                <!-- <div class="card-foot" style="background-color: #e1eaf7;"> -->
+                    <!-- <a href="{% url 'mobiles' %}"><button style="height:10px"> -->
+                    <h1 style="color:red;"> <i class="fa-solid fa-circle-arrow-right"></i></h1>
+                    <!-- </button></a> -->
+                
+                    <h3 class="data">Electronics
+                    </h3>
+                     Mobiles|Televisions&More
+                                         <!-- <h1 style="color:red;"> <i class="fa-solid fa-circle-arrow-right"></i></h1> -->
+
+                </div>
+                </a>
+
+            </div>
+
+
+            <div class="card">
+                <a href="{% url 'formal_shoes' %}" style="text-decoration: none;">
+                <div class="card-head" style="background-color:#f1233b; border-radius: 20px;">
+                    <img src="{% static 'black_shoes.png' %}">
+                <!-- </div> -->
+                <!-- <div class="card-foot"> -->
+                    <h1 style="color:rgb(140, 0, 255);"> <i class="fa-solid fa-circle-arrow-right"></i></h1>
+
+                    <h3 class="data">FOOTwear</h3>
+                     Men|Women|Kids
+                </div>
+                </a>
+            </div>
+
+             <div class="card">
+                <a href="{% url 'shirt' %}" style="text-decoration: none;">
+                <div class="card-head" style="background-color:#b56bfa; border-radius: 20px;">
+                    <img src="{% static 'black_cloth.png' %}">
+                <!-- </div> -->
+                <!-- <div class="card-foot"> -->
+                                        <h1 style="color:rgb(11, 15, 231);"> <i class="fa-solid fa-circle-arrow-right"></i></h1>
+
+                    <h3 class="data">Clothing</h3>
+                     Jeans|T-shirts|Shirts
+                </div>
+                </a>
+            </div>
+
+             <div class="card">
+                <a href="{% url 'furniture' %}" style="text-decoration: none;">
+                <div class="card-head" style="background-color:#08e44e; border-radius: 20px;">
+                    <img src="{% static 'black_sofaa.png' %}">
+                <!-- </div> -->
+                <!-- <div class="card-foot"> -->
+                                        <h1 style="color:rgb(4, 4, 4);"> <i class="fa-solid fa-circle-arrow-right"></i></h1>
+
+                    <h3 class="data">Furniture</h3>
+                     Sofa|Beds|Tables
+                </div>
+                </a>
+            </div>
+
+             <div class="card">
+                <a href="{% url 'kitchen' %}" style="text-decoration: none;">
+
+                <div class="card-head" style="background-color:#bbe621; border-radius: 20px;">
+                    <img src="{% static 'black_blenderr.png' %}">
+                <!-- </div> -->
+                <!-- <div class="card-foot"> -->
+                                        <h1 style="color:rgb(243, 85, 23);"> <i class="fa-solid fa-circle-arrow-right"></i></h1>
+
+                    <h3 class="data">Home Appliances</h3>
+                     Kitchen|living|Cleaning
+                </div>
+                </a>
+            </div>
+
+             <div class="card">
+                                <a href="{% url 'beauty' %}" style="text-decoration: none;">
+
+                <div class="card-head" style="background-color:#3bf0f0; border-radius: 20px;">
+                    <img src="{% static 'black_cosmeticss.png' %}">
+                <!-- </div> -->
+                <!-- <div class="card-foot"> -->
+                                        <h1 style="color:rgb(12, 12, 12);"> <i class="fa-solid fa-circle-arrow-right"></i></h1>
+
+                    <h3 class="data">Beauty</h3>
+                     Skincare|Makeup|Haircare
+                </div>
+                </a>
+            </div>
+        </div>
+        <div class="brand">
+            <img src="{% static 'WhatsApp Image 2026-10-26 at 16.24.04.jpeg'%}" style="height: 400px; width:900px;">
+            <img src="{% static 'WhatsApp Image 2026-10-27 at 18.00.35.jpeg' %}" style="height:400px; width:400px;">
+        </div>
+        <div class="top-deals">
+            
+        </div>
+
+        <div class="mini-banner">
+            <div class="mini-head">
+                <img src="{% static 'WhatsApp Image 2026-10-27 at 18.00.36.jpeg' %}">
+            </div>
+
+            <div class="mini-head">
+                <img src="{% static 'WhatsApp Image 2026-10-27 at 18.00.37.jpeg' %}">
+            </div>
+
+            <div class="mini-head">
+                <img src="{% static 'fur.png.jpeg' %}">
+            </div>
+
+            <div class="mini-head">
+                <img src="{% static 'WhatsApp Image 2026-10-26 at 16.24.03.jpeg' %}">
+            </div>
+            <div class="mini-head">
+                <img src="{% static 'ele.png.jpeg' %}">
+            </div>
+
+        </div>
+
+
+
+
+        {% endblock %}
+
+    
+        <footer class="modern-footer">
+
+    <div class="footer-container">
+
+        <div class="footer-brand">
+            <h2><i class="fa-solid fa-bag-shopping"></i> Nexa Mart  </h2>
+            <p>Your destination for quality products at
+               the best prices. Shop smarter, live better.</p>
+
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <h3>Shop</h3>
+            <a href="#">Electronics</a>
+            <a href="#">Fashion</a>
+            <a href="#">Home & Kitchen</a>
+            <a href="#">Beauty</a>
+            <a href="#">Best Sellers</a>
+        </div>
+
+        <div class="footer-links">
+            <h3>Customer Care</h3>
+            <a href="#">Contact Us</a>
+            <a href="#">Shipping & Delivery</a>
+            <a href="#">Returns & Refunds</a>
+            <a href="#">Track Order</a>
+            <a href="#">FAQs</a>
+        </div>
+
+        <div class="footer-links">
+            <h3>About</h3>
+            <a href="#">Our Story</a>
+            <a href="#">Careers</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+        </div>
+
+        <div class="footer-newsletter">
+            <h3>Stay Updated</h3>
+            <p>Subscribe for new arrivals and exclusive offers.</p>
+
+            <form class="newsletter-form">
+                <input type="email"
+                       placeholder="Enter your email"
+                       required>
+                <button type="submit">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </form>
+
+            <p class="secure-text">
+                <i class="fa-solid fa-lock"></i>
+                Secure shopping experience
+            </p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 YourStore. All rights reserved.
+        </p>
+
+        <div class="payment-methods">
+            <span>We Accept:</span>
+            <i class="fa-brands fa-cc-visa"></i>
+            <i class="fa-brands fa-cc-mastercard"></i>
+            <i class="fa-solid fa-credit-card"></i>
+            <i class="fa-solid fa-money-bill-wave"></i>
+        </div>
+
+    </div>
+
+</footer>
+   <script src="{% static 'slider.js' %}"></script>
+
+        
+    </body>
+</html>

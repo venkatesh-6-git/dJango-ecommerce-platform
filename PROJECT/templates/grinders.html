@@ -1,0 +1,50 @@
+{% extends 'home.html' %}
+{% block content %}
+
+
+    <div class="mobile-container">
+        {% for i in data %}
+        <div class="mobile-card">
+            <div class="mobile-header">
+                {% with count=forloop.counter|add:0 %}
+                <img src="/media/grinders/{{count}}.jpg" height="150px" width="150px">
+                <form action="{% url 'add_to_wishlist' 'grinders' i.id %}"
+                    method="POST" class="wishlist-form">
+                    {% csrf_token %}
+                    <button type="submit" class="wishlist-btn"
+                            aria-label="Add to wishlist">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </form>
+                {% endwith %}
+            </div>
+            <div class="mobile-body">
+                <h2>{{i.kitchen_name}}</h2>
+                <h5>{{i.kitchen_description}}</h5>
+            <div class="mobile-review">
+                <div class="m">
+                <h4>₹ {{i.kitchen_price}}</h4>
+                </div>
+                <div class="m">
+                <h3>⭐{{i.kitchen_rating}}</h3>
+                </div>
+            </div>
+
+            </div>
+
+            <div class="mobile-footer">
+                 <a href="{% url 'success' %}">
+                 <button style="width:100px;">BuyNow</button>
+                 </a>
+                
+                <a href="{% url 'add_cart' i.id 'grinders' %}">
+                    <button type="button">Add to Cart</button>
+                </a>
+                
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

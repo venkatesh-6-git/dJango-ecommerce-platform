@@ -1,0 +1,49 @@
+{% extends 'home.html' %}
+{% block content %}
+
+
+    <div class="mobile-container">
+        {% for i in data %}
+        <div class="mobile-card">
+            <div class="mobile-header">
+                <img src="{{i.furniture_image.url}}" height="150px" width="150px">
+                <form action="{% url 'add_to_wishlist' 'furniture' i.id %}"
+                    method="POST" class="wishlist-form">
+                    {% csrf_token %}
+                    <button type="submit" class="wishlist-btn"
+                            aria-label="Add to wishlist">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </form>
+
+            </div>
+            <div class="mobile-body">
+                <h2>{{i.furniture_name}}</h2>
+                <h5>{{i.furniture_description}}</h5>
+            <div class="mobile-review">
+                <div class="m">
+                <h4>₹ {{i.furniture_price}}</h4>
+                </div>
+                <div class="m">
+                <h3>⭐{{i.furniture_rating}}</h3>
+                </div>
+            </div>
+
+            </div>
+
+            <div class="mobile-footer">
+                 <a href="{% url 'success' %}">
+                 <button style="width:100px;">BuyNow</button>
+                 </a>
+                
+                <a href="{% url 'add_cart' i.id 'furniture' %}">
+                    <button type="button">Add to Cart</button>
+                </a>
+            </div>
+        
+        </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

@@ -25,8 +25,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-local-development-key')
 # SECURITY WARNING: don't run with debug turned on in production!
 
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'testserver', 'django-ecommerce-platform-th3w.onrender.com',]
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 if os.environ.get('RENDER_EXTERNAL_HOSTNAME'):
     ALLOWED_HOSTS.append(os.environ.get('RENDER_EXTERNAL_HOSTNAME'))

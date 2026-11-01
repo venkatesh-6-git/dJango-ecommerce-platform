@@ -92,13 +92,12 @@ DATABASES = {
         'HOST': os.environ.get('DB_HOST'),
         'PORT': os.environ.get('DB_PORT', '3306'),
         'OPTIONS': {
-            'ssl': {'ca': '/etc/ssl/certs/ca-certificates.crt'},
-        },
+    'ssl': {
+        'ca': BASE_DIR / 'certificates' / 'ca.pem'
+    },
+},
     }
 }
-print('DB HOSE',os.environ.get('DB_HOST'))
-print('DB NAME',os.environ.get('DB_NAME'))
-
   
 # Password validation
 # https://docs.djangoproject.com/en/6.1/ref/settings/#auth-password-validators

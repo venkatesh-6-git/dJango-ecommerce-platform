@@ -8,7 +8,7 @@
             <div class="mobile-header">
                 <img src="{{i.furniture_image.url}}" height="150px" width="150px">
 
-                <!-- whishlist  -->
+            
                 <form action="{% url 'add_to_wishlist' 'beauty' i.id %}"
                     method="POST" class="wishlist-form">
                     {% csrf_token %}

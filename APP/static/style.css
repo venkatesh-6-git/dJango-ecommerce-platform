@@ -1016,3 +1016,523 @@
     width:100px;
 
 }
+
+
+
+
+/* =========================================
+   NEXAMART - RESPONSIVE DESIGN
+   Desktop + Tablet + Mobile
+========================================= */
+
+/* Global fixes */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 1024px) {
+
+    .top {
+        height: auto;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 15px;
+        padding: 12px;
+    }
+
+    .top h3 {
+        margin-left: 0;
+    }
+
+    .inp {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .navigation {
+        gap: 25px;
+        flex-wrap: wrap;
+        height: auto;
+        padding: 12px;
+    }
+
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .mobile-container {
+        margin-left: 15px;
+        margin-right: 15px;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .mobile-card {
+        margin-top: 25px;
+    }
+
+    .cart-page {
+        margin: 30px auto;
+        width: 90%;
+    }
+
+    .mini-banner {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .brand img {
+        width: 100%;
+        height: auto;
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* HEADER */
+
+    .top {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 10px;
+        gap: 12px;
+    }
+
+    .top h2 {
+        margin: 0;
+        font-size: 25px;
+    }
+
+    .top h3 {
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+    }
+
+    .top form {
+        display: flex;
+        width: 100%;
+        gap: 5px;
+        padding: 0 5px;
+    }
+
+    .inp {
+        width: 100%;
+        min-width: 0;
+        height: 43px;
+        margin: 0;
+        font-size: 14px;
+    }
+
+    .inp::placeholder {
+        font-size: 12px;
+    }
+
+    .top form button {
+        height: 43px !important;
+        flex-shrink: 0;
+    }
+
+    /* NAVIGATION */
+
+    .navigation {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 12px 18px;
+        padding: 15px 8px;
+        font-size: 14px;
+    }
+
+    .navigation > div {
+        padding: 5px;
+    }
+
+    .navigation .kitsubmenu,
+    .navigation .fursubmenu,
+    .navigation .fsubmenu,
+    .navigation .esubmenu,
+    .navigation .csubmenu,
+    .navigation .bsubmenu {
+        z-index: 100;
+        min-width: 120px;
+    }
+
+    .navigation .electronics:hover > .esubmenu,
+    .navigation .clothes:hover > .csubmenu,
+    .navigation .beauty:hover > .bsubmenu,
+    .navigation .footware:hover > .fsubmenu,
+    .navigation .furniture:hover > .fursubmenu,
+    .navigation .kitchen:hover > .kitsubmenu,
+    .navigation .electronics:focus-within > .esubmenu,
+    .navigation .clothes:focus-within > .csubmenu,
+    .navigation .beauty:focus-within > .bsubmenu,
+    .navigation .footware:focus-within > .fsubmenu,
+    .navigation .furniture:focus-within > .fursubmenu,
+    .navigation .kitchen:focus-within > .kitsubmenu {
+        display: block;
+    }
+
+    /* HOMEPAGE BANNER */
+
+    .banner {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        margin-top: 8px;
+    }
+
+    /* HOMEPAGE CATEGORY CARDS */
+
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        padding: 10px;
+    }
+
+    .card {
+        width: 100%;
+        min-width: 0;
+        margin-top: 10px;
+        border-radius: 14px;
+    }
+
+    .card:hover {
+        transform: none;
+    }
+
+    .card-head {
+        height: 220px;
+        padding: 8px;
+    }
+
+    .card img {
+        width: 100%;
+        height: 110px;
+        object-fit: contain;
+        margin-top: 5px;
+    }
+
+    .card h3 {
+        font-size: 15px;
+    }
+
+    .card-head {
+        font-size: 13px;
+    }
+
+    .data {
+        margin-top: 10px;
+    }
+
+    /* BRAND BANNERS */
+
+    .brand {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+        padding: 10px;
+    }
+
+    .brand img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 300px;
+        object-fit: cover;
+    }
+
+    /* MINI BANNERS */
+
+    .mini-banner {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .mini-head img {
+        width: 100%;
+        height: 130px;
+        object-fit: cover;
+    }
+
+    /* PRODUCT LIST */
+
+    .mobile-container {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin: 15px 10px;
+        padding: 0;
+    }
+
+    .mobile-card {
+        width: 100%;
+        min-width: 0;
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 12px;
+        box-shadow: 2px 3px 8px #f7e6f2;
+    }
+
+    .mobile-header {
+        height: 130px;
+        position: relative;
+    }
+
+    .mobile-header img {
+        display: block;
+        width: 100%;
+        height: 115px;
+        object-fit: contain;
+        margin: 5px auto;
+    }
+
+    .mobile-body {
+        height: auto;
+        min-height: 150px;
+    }
+
+    .mobile-footer {
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 7px;
+        margin-top: 10px;
+    }
+
+    .mobile-footer button {
+        width: 100%;
+        max-width: 140px;
+        height: 42px;
+        margin-top: 5px;
+        font-size: 12px;
+    }
+
+    .mobile-review {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .product-btn {
+        margin: 10px 0;
+        width: 100%;
+        height: 40px;
+    }
+
+    /* WISHLIST */
+
+    .wishlist-form {
+        top: 5px;
+        right: 5px;
+    }
+
+    .wishlist-btn {
+        width: 30px;
+        height: 30px;
+    }
+
+    .w-btn {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    /* CART PAGE */
+
+    .cart-page {
+        width: 100%;
+        max-width: 100%;
+        margin: 20px auto;
+        padding: 12px;
+    }
+
+    .cart-page > h2 {
+        font-size: 23px;
+        margin-bottom: 20px;
+    }
+
+    .cart-page .cart-item {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .cart-page .cart-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .cart-page .cart-btn,
+    .cart-page .remove-btn,
+    .cart-page .continue-btn {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .cart-page .cart-total {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    /* OTHER CONTAINERS */
+
+    .rectangle-container,
+    .final_container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .rectangle-card {
+        margin: 10px;
+    }
+
+    .rectangle-head {
+        width: 100%;
+        height: auto;
+    }
+
+    /* SUCCESS PAGE */
+
+    .success {
+        width: auto;
+        margin: 25px 12px;
+        padding: 25px 15px;
+    }
+
+    /* FOOTER */
+
+    .modern-footer {
+        padding: 30px 15px 15px;
+    }
+
+    .footer-container {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px 15px;
+    }
+
+    .footer-brand,
+    .footer-newsletter {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .payment-methods {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+}
+
+/* =========================================
+   SMALL MOBILE SCREENS
+========================================= */
+
+@media (max-width: 380px) {
+
+    .top h3 {
+        font-size: 12px;
+        gap: 7px;
+    }
+
+    .navigation {
+        gap: 8px;
+        font-size: 12px;
+    }
+
+    .card-container,
+    .mobile-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 5px;
+    }
+
+    .card-head {
+        height: 190px;
+    }
+
+    .card img {
+        height: 90px;
+    }
+
+    .mobile-card {
+        padding: 7px;
+    }
+
+    .mobile-footer button {
+        font-size: 11px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-brand,
+    .footer-newsletter {
+        grid-column: auto;
+    }
+
+}
+
+/* =========================================
+   END NEXAMART RESPONSIVE CSS
+========================================= */

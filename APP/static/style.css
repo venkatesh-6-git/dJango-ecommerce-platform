@@ -1090,6 +1090,7 @@ img {
 
     .mobile-card {
         margin-top: 25px;
+        
     }
 
     .cart-page {
@@ -1532,6 +1533,37 @@ img {
     }
 
 }
+
+/* DESKTOP PRODUCT CARD FIX */
+@media (min-width: 1025px) {
+
+    .mobile-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 50px;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .mobile-card {
+        width: 300px;
+        flex: 0 0 250px;
+        margin-top: 70px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 /* =========================================
    END NEXAMART RESPONSIVE CSS

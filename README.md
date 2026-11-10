@@ -16,15 +16,7 @@ NexaMart is a full-stack e-commerce web application developed using Django, prov
 - Backend: Python, Django
 - Database: MySQL
 
-⚙️ Installation
 
-git clone YOUR_REPOSITORY_URL
-cd NexaMart
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py runserver
-
-Open "http://127.0.0.1:8000/" in your browser.
 
 🌐 Live Demo
 
@@ -36,6 +28,5 @@ Open "http://127.0.0.1:8000/" in your browser.
 
 👨‍💻 Developer
 venkatesh lekkala
-Your Name
 
 "GitHub" (YOUR_GITHUB_PROFILE_URL) | "LinkedIn" (YOUR_LINKEDIN_PROFILE_URL)

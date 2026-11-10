@@ -30,6 +30,10 @@ Open "http://127.0.0.1:8000/" in your browser.
 
 "View NexaMart" (https://django-ecommerce-platform-th3w.onrender.com/)
 
+
+
+
+
 👨‍💻 Developer
 venkatesh lekkala
 Your Name
